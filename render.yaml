@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: komara-whatsapp-webhook
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: VERIFY_TOKEN
+        sync: false
+      - key: APP_SECRET
+        sync: false
+      - key: WHATSAPP_TOKEN
+        sync: false
+      - key: PHONE_NUMBER_ID
+        sync: false
+      - key: AUTO_REPLY
+        value: "1"
